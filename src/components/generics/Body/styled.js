@@ -1,12 +1,24 @@
 import styled from "styled-components";
 
-import background_image_desktop from '../../../assets/img/bg-header-desktop.svg'
+import { Theme } from "../../../utils/style/themes";
 
-export const Background = styled.body`
-  height: 100%;
+export const Background = styled.div`
+  position: relative;
+`
 
-  background-image: url(${background_image_desktop});
-  background-size: 100%;
-  background-repeat: no-repeat;
-  background-color: hsl(180, 52%, 96%);
+export const Container = styled.div`
+  position: absolute;
+  top: 230px;
+  left: 0;
+
+  width: 100%;
+`
+
+export const Image = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  background-color: ${Theme.color.desaturatedDarkCyan};
 `

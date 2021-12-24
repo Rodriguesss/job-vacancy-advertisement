@@ -7,7 +7,5 @@ export const JobList = styled.ul`
   align-items: center;
   gap: 30px 0;
 
-  margin-top: 150px;
-
   width: 80%;
 `
