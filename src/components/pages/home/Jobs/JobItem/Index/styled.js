@@ -4,11 +4,11 @@ import { Theme } from '../../../../../../utils/style/themes'
 
 export const Li = styled.li`
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
   gap: 0 10px;
 
-  background: ${Theme.color.lightGrayishCyan2};
+  background: ${Theme.color.lightGrayishCyan1};
 
   border-radius: 5px;
 
@@ -22,5 +22,11 @@ export const Li = styled.li`
     border-left: 5px solid ${Theme.color.desaturatedDarkCyan};
 
     cursor: pointer;
+  }
+
+  div:first-child {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
   }
 `

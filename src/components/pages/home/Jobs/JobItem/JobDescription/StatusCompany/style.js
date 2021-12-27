@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { Theme } from '../../../../../../utils/style/themes'
+import { Theme } from '../../../../../../../utils/style/themes'
 
 export const Status = styled.ul`
   display: flex;

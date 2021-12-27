@@ -1,14 +1,18 @@
 import JobImage from '../../../../../atomics/JobImage'
-import JobDescription from '../JobDescription'
+import JobDescription from '../JobDescription/Index'
+import JobTechnology from '../JobTechnology'
 
 import { Li } from './styled'
 
-export default function JobItem({ data }) {
+export default function JobItem({ data, data: { company, languages } }) {
   console.log(data)
   return (
     <Li>
-      <JobImage img={data.company} />
-      <JobDescription data={data} />
+      <div>
+        <JobImage img={company} />
+        <JobDescription data={data} />
+      </div>
+      <JobTechnology languages={languages} />
     </Li>
   )
 }

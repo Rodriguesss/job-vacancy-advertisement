@@ -8,7 +8,7 @@ export const Background = styled.div`
 
 export const Container = styled.div`
   position: absolute;
-  top: 230px;
+  top: 280px;
   left: 0;
 
   width: 100%;
@@ -20,5 +20,12 @@ export const Image = styled.div`
   left: 0;
 
   width: 100%;
+
   background-color: ${Theme.color.desaturatedDarkCyan};
+
+  img {
+    width: 100%;
+
+    margin-bottom: -3px;
+  }
 `
