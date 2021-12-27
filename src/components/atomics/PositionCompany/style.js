@@ -10,6 +10,8 @@ export const Position = styled.p`
   :hover {
     cursor: pointer;
     
+    transition:all 0.3s ease;
+
     color: ${Theme.color.desaturatedDarkCyan};
   }
 `

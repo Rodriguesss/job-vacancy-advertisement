@@ -19,7 +19,9 @@ export const Li = styled.li`
   width: 100%;
 
   :hover {
-    border-left: 5px solid ${Theme.color.desaturatedDarkCyan};
+    transition:all 0.5s ease;
+
+    border-left: 5px solid ${Theme.color.desaturatedDarkCyan};]
 
     cursor: pointer;
   }

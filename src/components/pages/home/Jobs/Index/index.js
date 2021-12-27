@@ -7,7 +7,9 @@ export default function Jobs() {
 
   return (
     <JobList>
-      {data.map(job => ( <JobItem data={job} /> ))}
+      {data.map(job => (
+        <JobItem data={job} />
+      ))}
     </JobList>
   )
 }

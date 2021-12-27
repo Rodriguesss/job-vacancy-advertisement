@@ -26,6 +26,10 @@ export const TechnologyItem = styled.li`
   color: ${Theme.color.desaturatedDarkCyan};
 
   :hover {
+    cursor: pointer;
+
+    transition:all 0.3s ease;
+
     background: ${Theme.color.desaturatedDarkCyan};
 
     color: ${Theme.color.lightGrayishCyan1};

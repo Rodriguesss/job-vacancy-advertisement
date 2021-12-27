@@ -8,4 +8,6 @@ export const JobList = styled.ul`
   gap: 30px 0;
 
   width: 80%;
+
+  margin-bottom: 100px;
 `
