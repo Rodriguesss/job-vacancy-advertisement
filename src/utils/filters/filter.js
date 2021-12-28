@@ -20,12 +20,12 @@ function SearchJobsThroughFilter(filter, data, item, result) {
   let level = data[item].level
   let role = data[item].role
 
-  for (let technology in filter) {
-    findArrayAccordingFilterItem(foundFilterArray, languages, technology, filter)   
-    findArrayAccordingFilterItem(foundFilterArray, tools, technology, filter)    
+  for (let tech in filter) {
+    findArrayAccordingFilterItem(foundFilterArray, languages, tech, filter)   
+    findArrayAccordingFilterItem(foundFilterArray, tools, tech, filter)    
 
-    filter[technology].includes(level) && foundFilterArray.push(level)
-    filter[technology].includes(role) && foundFilterArray.push(role)
+    filter[tech].includes(level) && foundFilterArray.push(level)
+    filter[tech].includes(role) && foundFilterArray.push(role)
 
     foundFilterArray.length === filter.length && result.push(data[item])
   }
@@ -33,9 +33,9 @@ function SearchJobsThroughFilter(filter, data, item, result) {
   return result
 }
 
-function findArrayAccordingFilterItem(arr, arrayObj, technology, filter) {
+function findArrayAccordingFilterItem(arr, arrayObj, tech, filter) {
   for (let obj in arrayObj) {
-    filter[technology].includes(arrayObj[obj]) && arr.push(arrayObj[obj])
+    filter[tech].includes(arrayObj[obj]) && arr.push(arrayObj[obj])
   }
 }
 
