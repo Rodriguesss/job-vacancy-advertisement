@@ -1,10 +1,23 @@
-import { Technologies, TechnologyItem } from "./style"
+import TechnologyTag from "../../../../../atomics/TechnologyTag"
 
-export default function JobTechnology({ languages }) {
-  console.log(languages)
+import { MountFilter } from "../../../../../../utils/filters/filter"
+
+import { Technologies } from "./style"
+
+export default function JobTechnology({ data, setFilter }) {
+  function handleFilter(technology) {
+    setFilter(oldArray => {
+      return oldArray.indexOf(technology) === -1 ? [...oldArray, technology] : [...oldArray]
+    })
+  }
+
   return (
     <Technologies>
-      {languages.map(technology => (<TechnologyItem onClick={() => alert('oi')}>{technology}</TechnologyItem>))}
+      {MountFilter(data).map((technology, index) => (
+        <TechnologyTag key={index} handleFunction={() => handleFilter(technology)} hover={true}>
+          {technology}
+        </TechnologyTag>
+      ))}
     </Technologies>
   )
 }

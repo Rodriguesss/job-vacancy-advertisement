@@ -8,6 +8,8 @@ export const Li = styled.li`
   align-items: center;
   gap: 0 10px;
 
+  flex-wrap: wrap;
+
   background: ${Theme.color.lightGrayishCyan1};
 
   border-radius: 5px;
@@ -30,5 +32,7 @@ export const Li = styled.li`
     display: flex;
     align-items: center;
     justify-content: flex-start;
+
+    flex-wrap: wrap;
   }
 `

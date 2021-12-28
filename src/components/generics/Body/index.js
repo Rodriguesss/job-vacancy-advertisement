@@ -8,7 +8,8 @@ export default function Body({ children }) {
       <Image>
         <img src={background_image_desktop} alt="imagem fundo" />
       </Image>
-      <Container><div>{children}</div></Container>
+      
+      <Container>{children}</Container>
     </Background>
   )
 }

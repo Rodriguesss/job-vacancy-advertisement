@@ -8,7 +8,7 @@ export const Background = styled.div`
 
 export const Container = styled.div`
   position: absolute;
-  top: 280px;
+  top: 190px;
   left: 0;
 
   width: 100%;
