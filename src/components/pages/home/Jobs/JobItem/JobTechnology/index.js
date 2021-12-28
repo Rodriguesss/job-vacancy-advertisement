@@ -1,6 +1,6 @@
 import TechnologyTag from "../../../../../atomics/TechnologyTag"
 
-import { MountFilter } from "../../../../../../utils/filters/filter"
+import { mountFilter } from "../../../../../../utils/filters/filter"
 
 import { Technologies } from "./style"
 
@@ -13,7 +13,7 @@ export default function JobTechnology({ data, setFilter }) {
 
   return (
     <Technologies>
-      {MountFilter(data).map((technology, index) => (
+      {mountFilter(data).map((technology, index) => (
         <TechnologyTag key={index} handleFunction={() => handleFilter(technology)} hover={true}>
           {technology}
         </TechnologyTag>

@@ -1,20 +1,16 @@
-export function Filter(array, element) {
-  return array.filter(e => e !== element)
-}
-
-export function FilterJobsWithTags(data, filter) {
+export function renderJobs(data, filter) {
   if(filter.length === 0) return data
 
   let result = []
 
   for (let item in data) {
-    SearchJobsThroughFilter(filter, data, item, result)
+    searchJobsThroughFilter(filter, data, item, result)
   }
 
   return result
 }
 
-function SearchJobsThroughFilter(filter, data, item, result) {
+function searchJobsThroughFilter(filter, data, item, result) {
   let foundFilterArray = []
 
   const { languages, tools, level, role } = data[item]
@@ -38,7 +34,7 @@ function findArrayAccordingFilterItem(arr, filterParams, technology, filter) {
   }
 }
 
-export function MountFilter({ languages, level, role, tools }) {
+export function mountFilter({ languages, level, role, tools }) {
   let result = []
   const params = [languages, level, role, tools]
 

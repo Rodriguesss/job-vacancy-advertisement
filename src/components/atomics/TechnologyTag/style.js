@@ -3,6 +3,8 @@ import styled from "styled-components";
 import { Theme } from "../../../utils/style/themes";
 
 export const Tag = styled.li`
+  position: relative;
+
   display: flex;
 
   padding: 10px 8px 5px 8px;
@@ -25,4 +27,8 @@ export const Tag = styled.li`
       color: ${Theme.color.lightGrayishCyan1};
     }
   `}
+
+  img {
+    color: black;
+  }
 `

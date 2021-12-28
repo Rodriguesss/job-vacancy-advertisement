@@ -3,7 +3,7 @@ import { JobList } from './styled'
 
 import data from '../../../../../data/data.json'
 
-import { FilterJobsWithTags } from '../../../../../utils/filters/filter'
+import { renderJobs } from '../../../../../utils/filters/filter'
 
 import { useState, useEffect } from 'react'
 
@@ -18,7 +18,7 @@ export default function Jobs({ setFilter, filter }) {
     jobs.length === 0
       ? <p>Carregando</p>
       : <JobList>
-        {FilterJobsWithTags(data, filter).map((item, index) => (
+        {renderJobs(data, filter).map((item, index) => (
           <JobItem key={index} data={item} setFilter={setFilter} />
         ))}
       </JobList>

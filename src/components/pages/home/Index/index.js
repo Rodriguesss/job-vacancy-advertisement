@@ -9,8 +9,8 @@ export default function Home() {
   const [filter, setFilter] = useState([])
 
   return (
-    <Container>
-      <Filter filter={filter} />
+    <Container min-width="1400">
+      <Filter setFilter={setFilter} filter={filter} />
       <Jobs setFilter={setFilter} filter={filter} />
     </Container>
   )
