@@ -12,21 +12,15 @@ export default function Jobs({ setFilter, filter }) {
 
   useEffect(() => {
     setJobs(data)
-
-    /* setJobs(filter.map(i =>
-      data.filter(item => item.languages.includes(i)))) */
   }, [])
 
   return (
     jobs.length === 0
       ? <p>Carregando</p>
       : <JobList>
-        {filter.length !== 0 ? FilterJobsWithTags(data, filter).map((item, index) => (
+        {FilterJobsWithTags(data, filter).map((item, index) => (
           <JobItem key={index} data={item} setFilter={setFilter} />
-        ))
-          : jobs.map((job, index) => (
-            <JobItem key={index} data={job} setFilter={setFilter} />
-          ))}
+        ))}
       </JobList>
   )
 }

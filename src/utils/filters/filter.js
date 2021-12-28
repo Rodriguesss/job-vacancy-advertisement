@@ -3,6 +3,8 @@ export function Filter(array, element) {
 }
 
 export function FilterJobsWithTags(data, filter) {
+  if(filter.length === 0) return data
+
   let result = []
 
   for (let item in data) {
@@ -15,40 +17,42 @@ export function FilterJobsWithTags(data, filter) {
 function SearchJobsThroughFilter(filter, data, item, result) {
   let foundFilterArray = []
 
-  let languages = data[item].languages;
-  let tools = data[item].tools;
-  let level = data[item].level
-  let role = data[item].role
+  const { languages, tools, level, role } = data[item]
+  const params = [languages, tools, level, role]
 
-  for (let tech in filter) {
-    findArrayAccordingFilterItem(foundFilterArray, languages, tech, filter)   
-    findArrayAccordingFilterItem(foundFilterArray, tools, tech, filter)    
-
-    filter[tech].includes(level) && foundFilterArray.push(level)
-    filter[tech].includes(role) && foundFilterArray.push(role)
-
+  for (let technology in filter) {
+    params.forEach(parameter => findArrayAccordingFilterItem(foundFilterArray, parameter, technology, filter))
     foundFilterArray.length === filter.length && result.push(data[item])
   }
 
   return result
 }
 
-function findArrayAccordingFilterItem(arr, arrayObj, tech, filter) {
-  for (let obj in arrayObj) {
-    filter[tech].includes(arrayObj[obj]) && arr.push(arrayObj[obj])
+function findArrayAccordingFilterItem(arr, filterParams, technology, filter) {
+  if (Array.isArray(filterParams)) {
+    for (let obj in filterParams) {
+      filter[technology].includes(filterParams[obj]) && arr.push(filterParams[obj])
+    }
+  } else {
+    filter[technology].includes(filterParams) && arr.push(filterParams)
   }
 }
 
 export function MountFilter({ languages, level, role, tools }) {
   let result = []
+  const params = [languages, level, role, tools]
 
-  result.push(role, level)
-  addItemArrayInFilter(languages, result)
-  addItemArrayInFilter(tools, result)
+  params.forEach(parameter => {
+    addItemArrayInFilter(parameter, result)
+  })
 
   return result.sort()
 }
 
 function addItemArrayInFilter(filter, array) {
-  return filter.length !== 0 ? filter.map(item => array.push(item)) : array
+  if (Array.isArray(filter)) {
+    return filter.length !== 0 ? filter.map(item => array.push(item)) : array
+  } else {
+    return array.push(filter)
+  }
 }
