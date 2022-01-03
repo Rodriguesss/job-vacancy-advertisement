@@ -10,6 +10,4 @@ export const JobList = styled.ul`
   flex-wrap: wrap;
 
   width: 80%;
-
-  margin-bottom: 100px;
 `
