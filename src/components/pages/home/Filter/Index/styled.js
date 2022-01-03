@@ -5,9 +5,8 @@ import { Theme } from '../../../../../utils/style/themes'
 export const FilterContainer = styled.div`
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
   flex-wrap: wrap;
-  gap: 0 50px;
 
   opacity: ${({ filter }) => filter.length === 0 ? `0` : `1`};
 
@@ -20,6 +19,14 @@ export const FilterContainer = styled.div`
   background: #FFF;
 
   box-shadow: 3px 3px 10px ${Theme.color.desaturatedDarkCyan};
+
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0 50px;
+  }
 
   p {
     color: ${Theme.color.desaturatedDarkCyan};

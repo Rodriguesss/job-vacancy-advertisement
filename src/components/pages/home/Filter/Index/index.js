@@ -20,10 +20,12 @@ export default function Filter({ setFilter, filter }) {
 
   return (
     <FilterContainer filter={filter}>
-      {filter.map((technology, index) => (
-        <TechnologyTag key={index}>{technology}<IconClose handleSetFilter={() => handleSetFilter(technology)} /></TechnologyTag>
-      )
-      )}
+      <div>
+        {filter.map((technology, index) => (
+          <TechnologyTag key={index}>{technology}<IconClose handleSetFilter={() => handleSetFilter(technology)} /></TechnologyTag>
+        )
+        )}
+      </div>
       <p onClick={handleResetFilter}>Clear</p>
     </FilterContainer>
   )
