@@ -1,6 +1,6 @@
 # Anúncio de vaga de emprego
 
-Um desafio do site https://www.frontendmentor.io/ feito em React.
+Um desafio do site https://www.frontendmentor.io/challenges/job-listings-with-filtering-ivstIPCt feito em React.
 
 
 ## Rodar projeto
